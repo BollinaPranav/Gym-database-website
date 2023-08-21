@@ -1,0 +1,101 @@
+{%extends 'base.html' %}
+
+{%block content%}
+<style>
+p { color: white}
+img {
+height: 100px
+width: 100px
+}
+ body{
+    margin: 0;
+    background-color: rgb(35, 34, 34);
+}
+.myclass{
+width: auto;
+text-align:center;
+padding: 50px
+}
+.card {
+          background-color: rgb(99, 102, 106);
+          margin: 10px !important;
+          height: 60vh;
+          width: auto;
+          text: white;
+      }
+
+
+}
+</style>
+<center>
+    <h1><p>Clients</p></h1>
+    <br>
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="card mb-2">
+          <div class="card-body text-center">
+            <img src="{{client.clientimage.url}}" alt="avatar"
+              class="rounded-circle img-fluid" style="width: 250px;">
+            <h5 class="my-3"><p>{{client}}</p></h5>
+
+            <div class="d-flex justify-content-center mb-2">
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-lg-8">
+        <div class="card mb-4">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Full Name</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0"><p>{{client}}</p></p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Date Of Joining (MM/DD/YYYY):</p>
+              </div>
+              <div class="col-sm-9">
+                <p>{{client.dateofjoining}}</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Phone</p>
+              </div>
+              <div class="col-sm-9">
+                <p>{{client.phonenumber}}</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Amount Due</p>
+              </div>
+              <div class="col-sm-9">
+                <p>{{client.Amountdue}}</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Trainer Name</p>
+              </div>
+              <div class="col-sm-9">
+                <p >{{client.trainer}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+</center>
+<br>
+{%endblock%}

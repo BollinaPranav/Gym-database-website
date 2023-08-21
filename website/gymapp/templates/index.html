@@ -1,0 +1,39 @@
+{%extends 'base.html' %}
+
+{%block content%}
+<style>
+p { color: white}
+ body{
+    margin: 0;
+    background-color: rgb(35, 34, 34);
+}
+
+.hero{
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: grey;
+  opacity: 1; /* Firefox */
+}
+
+}
+</style>
+
+<head>
+    <title>Insert Records </title>
+</head>
+<body>
+    <center>
+        <h1><p>Add new Trainer data</p></h1>
+
+        <hr/>
+
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form.as_p}}
+        <button class="btn btn-outline-success" type="submit" onclick="return alert('Record saved')" > Insert Data</button>
+            </form><br>
+        <a class="btn btn-outline-success" href="connsql" role="button"><<-- Back</a>
+    </center>
+
+</body>
+</html>
+{%endblock%}

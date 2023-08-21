@@ -1,0 +1,46 @@
+{%extends 'base.html' %}
+
+{%block content%}
+<style>
+p { color: white}
+ body{
+    margin: 0;
+    background-color: rgb(35, 34, 34);
+}
+
+
+
+}
+</style>
+<head>
+    <center>
+    <title> Connect sql server from django</title>
+    <h1><p>Trainer Data</p></h1>
+    </head>
+    <hr/>
+<table class="table table-hover table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Trainer Name</th>
+      <th scope="col">Address</th>
+      <th scope="col">mobile number</th>
+      <th scope="col">email address</th>
+
+
+    </tr>
+  </thead>
+        {%for datadisplay in Trainer%}
+        <tr>
+            <td> <p>{{datadisplay.name}}</p></td>
+            <td> <p>{{datadisplay.address}}</p></td>
+            <td> <p>{{datadisplay.phonenumber}}</p></td>
+            <td> <p>{{datadisplay.email}}</p></td>
+        </tr>
+        {% endfor %}
+    </table>
+<br><br>
+<a class="btn btn-outline-success" href="addtrainer" role="button">Add New Trainer details</a>
+
+</center>
+<br>
+{%endblock%}

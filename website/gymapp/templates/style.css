@@ -1,0 +1,16 @@
+.body{
+    margin: 0;
+}
+
+.hero{
+    background-color: rgb(35, 34, 34);
+    background-image: url("gym.jpg");
+    color:white;
+}
+
+.card {
+          background-color: rgb(35, 34, 34);
+          margin: 10px !important;
+          height: 60vh;
+          width: auto;
+      }

@@ -1,0 +1,31 @@
+{%extends 'base.html' %}
+
+{%block content%}
+<style>
+p { color: white}
+ body{
+    margin: 0;
+    background-color: rgb(35, 34, 34);
+}
+
+
+
+}
+</style>
+<head>
+    <center>
+        {% if searched %}
+                <h1><p>Your search results for '{{searched}}' </p></h1>
+        <br/>
+        {% for client in clients %}
+            <p><a href="{% url 'showclient' client.id %}">{{client}}</a></p><br/>
+        {% endfor %}
+        {% else %}
+        <h1>Client not in the list</h1>
+        {% endif %}
+    </head>
+
+    </center>
+
+<br>
+{%endblock%}

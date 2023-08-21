@@ -1,0 +1,75 @@
+{%extends 'base.html' %}
+
+{%block content%}
+<style>
+p { color: white}
+img {
+height: 50px;
+width: 90px;
+}
+ body{
+    margin: 0;
+    background-color: rgb(35, 34, 34);
+}
+.myclass{
+width: auto;
+text-align:center;
+padding: 50px
+}
+
+
+
+}
+</style>
+<center>
+<head>
+
+    <title> Connect sql server from django</title>
+
+    <h1><p>Client Data</p></h1>
+    </head>
+    <hr/>
+<table class="table table-hover table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Client Name</th>
+      <th scope="col">Client mobile</th>
+      <th scope="col">Amount due</th>
+
+
+    </tr>
+  </thead>
+      <div class = "myclass">
+        {%for datadisplay in Client%}
+        <tr data-href="{% url 'showclient' datadisplay.id %}">
+            <td> <p>{{datadisplay.name}}</p></td>
+            <td> <p>{{datadisplay.phonenumber}}</p></td>
+            <td> <p>{{datadisplay.Amountdue}}</p></td>
+        </tr>
+
+        {% endfor %}
+          </div>
+
+    </table>
+<br>
+
+
+<br>
+<a class="btn btn-outline-success" href="index" role="button">Add New Client details</a>
+
+</center>
+<br>
+
+<script>
+    document.addEventListener("DOMContentLoaded",() => {
+        const rows = document.querySelectorAll("tr[data-href]");
+
+        console.log(rows);
+        rows.forEach(row => {
+            row.addEventListener("click", () => {
+                window.location.href = row.dataset.href;
+                });
+            });
+        });
+</script>
+{%endblock%}
